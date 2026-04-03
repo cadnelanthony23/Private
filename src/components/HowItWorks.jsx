@@ -2,9 +2,9 @@ import styles from './HowItWorks.module.css'
 
 const STEPS = [
   {
-    num: '01',
-    title: 'Créez votre profil',
-    body: 'Inscription rapide, vérification d'identité obligatoire. Ajoutez photos libres et contenus premium à débloquer.',
+    num: "01",
+    title: "Créez votre profil",
+    body: "Inscription rapide, vérification d'identité obligatoire. Ajoutez photos libres et contenus premium à débloquer.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
         <circle cx="12" cy="8" r="4" />
@@ -13,9 +13,9 @@ const STEPS = [
     ),
   },
   {
-    num: '02',
-    title: 'Créez ou rejoignez un événement',
-    body: 'Soirée privée pour 2, 3 ou 5 personnes. Lieu partenaire pré-sélectionné, règles affichées, durée définie.',
+    num: "02",
+    title: "Créez ou rejoignez un événement",
+    body: "Soirée privée pour 2, 3 ou 5 personnes. Lieu partenaire pré-sélectionné, règles affichées, durée définie.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
         <rect x="3" y="4" width="18" height="16" rx="2" />
@@ -25,9 +25,9 @@ const STEPS = [
     ),
   },
   {
-    num: '03',
-    title: 'Payez & débloquez',
-    body: 'Paiement sécurisé par MTN MoMo. La localisation exacte et les détails complets sont révélés après confirmation.',
+    num: "03",
+    title: "Payez & débloquez",
+    body: "Paiement sécurisé par MTN MoMo. La localisation exacte et les détails complets sont révélés après confirmation.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
