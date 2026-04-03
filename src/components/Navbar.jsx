@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 import styles from './Navbar.module.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -17,8 +20,8 @@ export default function Navbar() {
       <div className={styles.links}>
         <a href="#how">Comment ça marche</a>
         <a href="#profiles">Explorer</a>
-        <a href="#" className={styles.active}>Connexion</a>
-        <button className={styles.btnNav}>Rejoindre</button>
+        <a href="/login" className={styles.active}>Connexion</a>
+        <button className={styles.btnNav} onClick={() => navigate('/register')} >Rejoindre</button>
       </div>
     </nav>
   )

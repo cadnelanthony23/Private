@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react'
 import styles from './Hero.module.css'
+import { useNavigate } from "react-router-dom";
+
 
 export default function Hero() {
   const itemsRef = useRef([])
+  const navigate = useNavigate();
 
-  /* Apparition immédiate au chargement (pas besoin d'attendre le scroll) */
   useEffect(() => {
     itemsRef.current.forEach((el, i) => {
       if (!el) return
@@ -16,12 +18,10 @@ export default function Hero() {
 
   return (
     <section className={styles.hero} id="hero">
-      {/* Fonds superposés */}
       <div className={styles.bg} />
       <div className={styles.city} />
       <div className={styles.overlay} />
 
-      {/* Contenu */}
       <div className={styles.content}>
         <p className={`${styles.location} fade-up`} ref={ref(0)}>
           <span />
@@ -41,7 +41,9 @@ export default function Hero() {
         </p>
 
         <div className={`${styles.actions} fade-up`} ref={ref(3)}>
-          <button className="btn-primary">Rejoindre maintenant →</button>
+          <button className="btn-primary" onClick={() => navigate('/register')}>
+            Rejoindre maintenant →
+          </button>
           <button className="btn-secondary">Explorer les profils</button>
         </div>
       </div>

@@ -1,12 +1,12 @@
 import styles from './Footer.module.css'
 
 const LINKS = [
-  { label: 'Comment ça marche', href: '#how'        },
-  { label: 'Profils',           href: '#profiles'   },
-  { label: 'Événements',        href: '#events'     },
+  { label: 'Comment ça marche', href: '#how' },
+  { label: 'Profils', href: '#profiles' },
+  { label: 'Événements', href: '#events' },
   { label: 'Lieux partenaires', href: '#apartments' },
-  { label: 'CGU & Confidentialité', href: '#'       },
-  { label: 'Contact',           href: '#'           },
+  { label: 'CGU & Confidentialité', href: '#' },
+  { label: 'Contact', href: '#' },
 ]
 
 export default function Footer() {

@@ -1,34 +1,39 @@
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useFadeUp } from './hooks/useFadeUp'
-import Navbar      from './components/Navbar'
-import Hero        from './components/Hero'
-import Stats       from './components/Stats'
-import HowItWorks  from './components/HowItWorks'
-import Profiles    from './components/Profiles'
-import Events      from './components/Events'
-import Pricing     from './components/Pricing'
-import Safety      from './components/Safety'
-import Apartments  from './components/Apartments'
-import CtaFinal    from './components/CtaFinal'
-import Footer      from './components/Footer'
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Profile from "./pages/Profile";
 
-export default function App() {
-  useFadeUp()
+const AUTH_ROUTES = ['/login', '/register'];
+
+function Layout() {
+  const location = useLocation();
+  const isAuth = AUTH_ROUTES.includes(location.pathname);
+
+  useFadeUp();
 
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Stats />
-        <HowItWorks />
-        <Profiles />
-        <Events />
-        <Pricing />
-        <Safety />
-        <Apartments />
-        <CtaFinal />
-      </main>
-      <Footer />
+      {!isAuth && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
+
+      </Routes>
+      {!isAuth && <Footer />}
     </>
-  )
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Layout />
+    </Router>
+  );
 }
