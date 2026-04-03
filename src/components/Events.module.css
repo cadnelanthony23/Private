@@ -1,0 +1,150 @@
+.section { background: var(--dark); }
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── Métriques ─────────────────────────────────────────────────── */
+.metrics {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.metricVal {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+}
+.metricLbl {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* ── Cartes ────────────────────────────────────────────────────── */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: var(--dark2);
+  border: 0.5px solid var(--border);
+  padding: 28px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card:hover { border-color: rgba(201,168,76,0.40); }
+.card:hover::before { opacity: 1; }
+
+.cardFeatured { border-color: rgba(201,168,76,0.25); }
+.cardFeatured::before { opacity: 0.6; }
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.cardType {
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.cardSpots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.dots { display: flex; gap: 3px; }
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--border2);
+}
+.dotFilled { background: var(--gold); }
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.cardLocation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.cardLocation svg {
+  width: 12px; height: 12px;
+  stroke: var(--gold);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* Zone floutée avant paiement */
+.blurPill {
+  font-size: 11px;
+  background: rgba(201,168,76,0.04);
+  border: 0.5px solid var(--border);
+  padding: 2px 8px;
+  filter: blur(3.5px);
+  user-select: none;
+  color: var(--muted);
+}
+
+.cardPrice {
+  position: absolute;
+  right: 32px; bottom: 28px;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--gold);
+}
+.cardPrice small {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 80px 24px;
+  }
+}

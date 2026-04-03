@@ -1,0 +1,134 @@
+.section { background: var(--dark2); }
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 120px 48px;
+  text-align: center;
+}
+
+.header { margin-bottom: 64px; }
+.headerSub {
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+/* ── Grille ────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+  text-align: left;
+}
+
+/* ── Plan ──────────────────────────────────────────────────────── */
+.plan {
+  background: var(--dark2);
+  padding: 48px 36px;
+  position: relative;
+  transition: background 0.3s;
+}
+.plan:hover { background: var(--dark3); }
+.featured    { background: var(--dark3); }
+
+.featuredBadge {
+  position: absolute;
+  top: -1px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.planTag {
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.featured .planTag { color: var(--gold); }
+
+.planPrice {
+  font-family: var(--font-serif);
+  font-size: 52px;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1;
+}
+.featured .planPrice { color: var(--gold); }
+
+.planCurrency {
+  font-size: 20px;
+  vertical-align: super;
+  margin-right: 2px;
+  color: var(--muted);
+}
+
+.planPeriod {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+/* ── Features ──────────────────────────────────────────────────── */
+.features {
+  list-style: none;
+  margin-bottom: 40px;
+}
+.features li {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 9px 0;
+  border-bottom: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.features li::before {
+  content: '—';
+  color: var(--gold);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+.featureActive { color: var(--text) !important; }
+.featureActive::before { opacity: 1 !important; }
+
+/* ── Bouton plan ───────────────────────────────────────────────── */
+.planBtn {
+  width: 100%;
+  padding: 13px;
+  font-size: 12px;
+  letter-spacing: 0.10em;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  background: transparent;
+  border: 0.5px solid var(--border2);
+  color: var(--muted);
+  transition: border-color 0.25s, color 0.25s;
+}
+.planBtn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.planBtnFeatured {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+  font-weight: 500;
+}
+.planBtnFeatured:hover { filter: brightness(1.12); }
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .inner { padding: 80px 24px; }
+}

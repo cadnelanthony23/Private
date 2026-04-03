@@ -1,0 +1,125 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ── Couches de fond ───────────────────────────────────────────── */
+.bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 60%, rgba(201,168,76,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%),
+    linear-gradient(160deg, #0A0A08 0%, #141410 40%, #0e0e0b 100%);
+}
+
+.city {
+  position: absolute; inset: 0;
+  /* Remplace par une vraie image de Cotonou quand disponible */
+  background-image: url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1600&q=80');
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.18;
+  filter: sepia(40%) saturate(120%);
+}
+
+.overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,10,8,0.60) 0%,
+    rgba(10,10,8,0.20) 40%,
+    rgba(10,10,8,0.75) 100%
+  );
+}
+
+/* ── Contenu ───────────────────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+  max-width: 900px;
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.20em;
+  color: var(--gold);
+  margin-bottom: 28px;
+  opacity: 0.8;
+}
+.location span {
+  display: block;
+  width: 32px;
+  height: 0.5px;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+.h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  color: #E8E4D8;
+}
+.h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.h1 span {
+  display: block;
+  font-size: clamp(40px, 6vw, 72px);
+  color: rgba(232,228,216,0.45);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+}
+
+.sub {
+  font-size: 15px;
+  color: rgba(232,228,216,0.60);
+  margin: 28px auto 44px;
+  max-width: 460px;
+  line-height: 1.8;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Scroll hint ───────────────────────────────────────────────── */
+.scrollHint {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.4;
+  animation: bounce 2.5s ease-in-out infinite;
+}
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}

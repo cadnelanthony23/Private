@@ -1,0 +1,127 @@
+.section { background: var(--dark2); }
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 48px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.proposeLink {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 0.10em;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.proposeLink:hover { opacity: 1; }
+
+/* ── Grille ────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ── Carte ─────────────────────────────────────────────────────── */
+.card {
+  background: var(--dark3);
+  border: 0.5px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.card:hover { border-color: rgba(201,168,76,0.35); }
+
+/* Image placeholder */
+.imgBox {
+  height: 180px;
+  background: linear-gradient(135deg, var(--dark4), var(--dark3));
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imgInner {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #1a1a14, #222218);
+  opacity: 0.8;
+}
+.icon {
+  position: relative;
+  width: 48px; height: 48px;
+  border: 0.5px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+.icon svg {
+  width: 22px; height: 22px;
+  opacity: 0.55;
+}
+
+/* Contenu */
+.body { padding: 24px; }
+
+.aptName {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.aptZone {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.10em;
+  opacity: 0.7;
+  margin-bottom: 14px;
+}
+
+.specs {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.spec {
+  font-size: 12px;
+  color: var(--muted);
+}
+.spec strong {
+  color: var(--text);
+  font-weight: 500;
+  margin-right: 3px;
+}
+
+.aptPrice {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 0.5px solid var(--border);
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--gold);
+}
+.aptPrice small {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .inner { padding: 80px 24px; }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}
